@@ -6,11 +6,17 @@
 
         <div class="card-body">
 
-            <form action="/contact" method="post">
-                {{ csrf_field() }}
+            <form role="form" id="contact-form" class="contact-form"  method="post" action="{{route('contact.store')}}">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="Name" name="name" placeholder="enter your name" >
+                </div>
+
+
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="Email" name="email" placeholder="name@example.com"  >
                 </div>
 
                 <div class="form-group">
